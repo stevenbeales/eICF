@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MiFormsIntegrationService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MiFormsIntegrationService_MiForms_AuthServices_AuthServices" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://uat-miforms.epharmasolutions.com/MFS/Services/AuthServices.asmx</Value>
+    </Setting>
+    <Setting Name="MiFormsIntegrationService_MiForms_SyncServices_SyncServices" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://uat-miforms.epharmasolutions.com/mfs/services/SyncServices.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

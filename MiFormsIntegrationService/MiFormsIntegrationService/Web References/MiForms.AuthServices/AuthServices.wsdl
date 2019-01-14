@@ -1,0 +1,1564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.mi-corporation.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.mi-corporation.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.mi-corporation.com/">
+      <s:element name="GetKeyPair">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetKeyPairResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetKeyPairResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAuthToken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="encryptedPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="requestedTokenExpiration" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requestedTokenRequests" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAuthTokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAuthTokenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServerConnectionSpeed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServerConnectionSpeedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServerConnectionSpeedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServerInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetServerInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetServerInformationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUsersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserInformationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newUserPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newUserFirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newUserMiddleName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newUserLastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newUserDemographics" type="tns:ArrayOfDemographicField" />
+            <s:element minOccurs="0" maxOccurs="1" name="newUserGroups" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDemographicField">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DemographicField" nillable="true" type="tns:DemographicField" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DemographicField">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Required" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllowPasswordChange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllowPasswordChangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllowPasswordChangeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserDemographicFields">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserDemographicFieldsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserDemographicFieldsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPasswordRequirements">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="mustChangePassword" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="previousPasswordMatches" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="passwordExpirationRequired" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="passwordExpirationDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="maxLoginFailures" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="hoursToLock" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetPasswordRequirementsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetPasswordRequirementsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetUserActiveStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isActive" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetUserActiveStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetUserActiveStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetUserDemographics">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userDemographics" type="tns:ArrayOfDemographicField" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetUserDemographicsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetUserDemographicsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetUserLockStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isLocked" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetUserLockStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetUserLockStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetUsername">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newUserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetUsernameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetUsernameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllGroups">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllGroupsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupsForUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupsForUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGroupsForUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupActiveStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupActiveStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGroupActiveStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersInGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersInGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUsersInGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupPrivileges">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupPrivilegesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGroupPrivilegesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupApps">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeInactive" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupAppsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGroupAppsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupFormTemplates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeInactive" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupFormTemplatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGroupFormTemplatesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupDemographics" type="tns:ArrayOfDemographicField" />
+            <s:element minOccurs="0" maxOccurs="1" name="privilegeList" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="userList" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="templateList" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="appList" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserToGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserToGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddUserToGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAppToGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddAppToGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddAppToGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFormTemplateToGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="formId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddFormTemplateToGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddFormTemplateToGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupDemographicFields">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupDemographicFieldsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGroupDemographicFieldsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveUserFromGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveUserFromGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveUserFromGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveAppFromGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveAppFromGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveAppFromGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveFormTemplateFromGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="formId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveFormTemplateFromGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoveFormTemplateFromGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetGroupActiveStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isActive" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetGroupActiveStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetGroupActiveStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetGroupName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newGroupName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetGroupNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetGroupNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPrivileges">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPrivilegesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPrivilegesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetGroupPrivileges">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupPrivileges" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetGroupPrivilegesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetGroupPrivilegesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetKeyPairSoapIn">
+    <wsdl:part name="parameters" element="tns:GetKeyPair" />
+  </wsdl:message>
+  <wsdl:message name="GetKeyPairSoapOut">
+    <wsdl:part name="parameters" element="tns:GetKeyPairResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAuthTokenSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAuthToken" />
+  </wsdl:message>
+  <wsdl:message name="GetAuthTokenSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAuthTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServerConnectionSpeedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServerConnectionSpeed" />
+  </wsdl:message>
+  <wsdl:message name="GetServerConnectionSpeedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServerConnectionSpeedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetServerInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetServerInformation" />
+  </wsdl:message>
+  <wsdl:message name="GetServerInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetServerInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserInformation" />
+  </wsdl:message>
+  <wsdl:message name="GetUserInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUser" />
+  </wsdl:message>
+  <wsdl:message name="AddUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllowPasswordChangeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllowPasswordChange" />
+  </wsdl:message>
+  <wsdl:message name="GetAllowPasswordChangeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllowPasswordChangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDemographicFieldsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserDemographicFields" />
+  </wsdl:message>
+  <wsdl:message name="GetUserDemographicFieldsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserDemographicFieldsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:SetPassword" />
+  </wsdl:message>
+  <wsdl:message name="SetPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:SetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetPasswordRequirementsSoapIn">
+    <wsdl:part name="parameters" element="tns:SetPasswordRequirements" />
+  </wsdl:message>
+  <wsdl:message name="SetPasswordRequirementsSoapOut">
+    <wsdl:part name="parameters" element="tns:SetPasswordRequirementsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetUserActiveStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:SetUserActiveStatus" />
+  </wsdl:message>
+  <wsdl:message name="SetUserActiveStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:SetUserActiveStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetUserDemographicsSoapIn">
+    <wsdl:part name="parameters" element="tns:SetUserDemographics" />
+  </wsdl:message>
+  <wsdl:message name="SetUserDemographicsSoapOut">
+    <wsdl:part name="parameters" element="tns:SetUserDemographicsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetUserLockStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:SetUserLockStatus" />
+  </wsdl:message>
+  <wsdl:message name="SetUserLockStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:SetUserLockStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetUsernameSoapIn">
+    <wsdl:part name="parameters" element="tns:SetUsername" />
+  </wsdl:message>
+  <wsdl:message name="SetUsernameSoapOut">
+    <wsdl:part name="parameters" element="tns:SetUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllGroups" />
+  </wsdl:message>
+  <wsdl:message name="GetAllGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupsForUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGroupsForUser" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupsForUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGroupsForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupActiveStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGroupActiveStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupActiveStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGroupActiveStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsersInGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsersInGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupPrivilegesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGroupPrivileges" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupPrivilegesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGroupPrivilegesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupAppsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGroupApps" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupAppsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGroupAppsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupFormTemplatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGroupFormTemplates" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupFormTemplatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGroupFormTemplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:AddGroup" />
+  </wsdl:message>
+  <wsdl:message name="AddGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:AddGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserToGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUserToGroup" />
+  </wsdl:message>
+  <wsdl:message name="AddUserToGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserToGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddAppToGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:AddAppToGroup" />
+  </wsdl:message>
+  <wsdl:message name="AddAppToGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:AddAppToGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddFormTemplateToGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:AddFormTemplateToGroup" />
+  </wsdl:message>
+  <wsdl:message name="AddFormTemplateToGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:AddFormTemplateToGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupDemographicFieldsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGroupDemographicFields" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupDemographicFieldsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGroupDemographicFieldsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveUserFromGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveUserFromGroup" />
+  </wsdl:message>
+  <wsdl:message name="RemoveUserFromGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveUserFromGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAppFromGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveAppFromGroup" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAppFromGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveAppFromGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveFormTemplateFromGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveFormTemplateFromGroup" />
+  </wsdl:message>
+  <wsdl:message name="RemoveFormTemplateFromGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveFormTemplateFromGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetGroupActiveStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:SetGroupActiveStatus" />
+  </wsdl:message>
+  <wsdl:message name="SetGroupActiveStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:SetGroupActiveStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetGroupNameSoapIn">
+    <wsdl:part name="parameters" element="tns:SetGroupName" />
+  </wsdl:message>
+  <wsdl:message name="SetGroupNameSoapOut">
+    <wsdl:part name="parameters" element="tns:SetGroupNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPrivilegesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPrivileges" />
+  </wsdl:message>
+  <wsdl:message name="GetPrivilegesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPrivilegesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetGroupPrivilegesSoapIn">
+    <wsdl:part name="parameters" element="tns:SetGroupPrivileges" />
+  </wsdl:message>
+  <wsdl:message name="SetGroupPrivilegesSoapOut">
+    <wsdl:part name="parameters" element="tns:SetGroupPrivilegesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AuthServicesSoap">
+    <wsdl:operation name="GetKeyPair">
+      <wsdl:input message="tns:GetKeyPairSoapIn" />
+      <wsdl:output message="tns:GetKeyPairSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthToken">
+      <wsdl:input message="tns:GetAuthTokenSoapIn" />
+      <wsdl:output message="tns:GetAuthTokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerConnectionSpeed">
+      <wsdl:input message="tns:GetServerConnectionSpeedSoapIn" />
+      <wsdl:output message="tns:GetServerConnectionSpeedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerInformation">
+      <wsdl:input message="tns:GetServerInformationSoapIn" />
+      <wsdl:output message="tns:GetServerInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input message="tns:GetUsersSoapIn" />
+      <wsdl:output message="tns:GetUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInformation">
+      <wsdl:input message="tns:GetUserInformationSoapIn" />
+      <wsdl:output message="tns:GetUserInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <wsdl:input message="tns:AddUserSoapIn" />
+      <wsdl:output message="tns:AddUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllowPasswordChange">
+      <wsdl:input message="tns:GetAllowPasswordChangeSoapIn" />
+      <wsdl:output message="tns:GetAllowPasswordChangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDemographicFields">
+      <wsdl:input message="tns:GetUserDemographicFieldsSoapIn" />
+      <wsdl:output message="tns:GetUserDemographicFieldsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPassword">
+      <wsdl:input message="tns:SetPasswordSoapIn" />
+      <wsdl:output message="tns:SetPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetPasswordRequirements">
+      <wsdl:input message="tns:SetPasswordRequirementsSoapIn" />
+      <wsdl:output message="tns:SetPasswordRequirementsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUserActiveStatus">
+      <wsdl:input message="tns:SetUserActiveStatusSoapIn" />
+      <wsdl:output message="tns:SetUserActiveStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUserDemographics">
+      <wsdl:input message="tns:SetUserDemographicsSoapIn" />
+      <wsdl:output message="tns:SetUserDemographicsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUserLockStatus">
+      <wsdl:input message="tns:SetUserLockStatusSoapIn" />
+      <wsdl:output message="tns:SetUserLockStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUsername">
+      <wsdl:input message="tns:SetUsernameSoapIn" />
+      <wsdl:output message="tns:SetUsernameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGroups">
+      <wsdl:input message="tns:GetAllGroupsSoapIn" />
+      <wsdl:output message="tns:GetAllGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsForUser">
+      <wsdl:input message="tns:GetGroupsForUserSoapIn" />
+      <wsdl:output message="tns:GetGroupsForUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupActiveStatus">
+      <wsdl:input message="tns:GetGroupActiveStatusSoapIn" />
+      <wsdl:output message="tns:GetGroupActiveStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInGroup">
+      <wsdl:input message="tns:GetUsersInGroupSoapIn" />
+      <wsdl:output message="tns:GetUsersInGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupPrivileges">
+      <wsdl:input message="tns:GetGroupPrivilegesSoapIn" />
+      <wsdl:output message="tns:GetGroupPrivilegesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupApps">
+      <wsdl:input message="tns:GetGroupAppsSoapIn" />
+      <wsdl:output message="tns:GetGroupAppsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupFormTemplates">
+      <wsdl:input message="tns:GetGroupFormTemplatesSoapIn" />
+      <wsdl:output message="tns:GetGroupFormTemplatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <wsdl:input message="tns:AddGroupSoapIn" />
+      <wsdl:output message="tns:AddGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToGroup">
+      <wsdl:input message="tns:AddUserToGroupSoapIn" />
+      <wsdl:output message="tns:AddUserToGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAppToGroup">
+      <wsdl:input message="tns:AddAppToGroupSoapIn" />
+      <wsdl:output message="tns:AddAppToGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFormTemplateToGroup">
+      <wsdl:input message="tns:AddFormTemplateToGroupSoapIn" />
+      <wsdl:output message="tns:AddFormTemplateToGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupDemographicFields">
+      <wsdl:input message="tns:GetGroupDemographicFieldsSoapIn" />
+      <wsdl:output message="tns:GetGroupDemographicFieldsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserFromGroup">
+      <wsdl:input message="tns:RemoveUserFromGroupSoapIn" />
+      <wsdl:output message="tns:RemoveUserFromGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAppFromGroup">
+      <wsdl:input message="tns:RemoveAppFromGroupSoapIn" />
+      <wsdl:output message="tns:RemoveAppFromGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFormTemplateFromGroup">
+      <wsdl:input message="tns:RemoveFormTemplateFromGroupSoapIn" />
+      <wsdl:output message="tns:RemoveFormTemplateFromGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetGroupActiveStatus">
+      <wsdl:input message="tns:SetGroupActiveStatusSoapIn" />
+      <wsdl:output message="tns:SetGroupActiveStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetGroupName">
+      <wsdl:input message="tns:SetGroupNameSoapIn" />
+      <wsdl:output message="tns:SetGroupNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrivileges">
+      <wsdl:input message="tns:GetPrivilegesSoapIn" />
+      <wsdl:output message="tns:GetPrivilegesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetGroupPrivileges">
+      <wsdl:input message="tns:SetGroupPrivilegesSoapIn" />
+      <wsdl:output message="tns:SetGroupPrivilegesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AuthServicesSoap" type="tns:AuthServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetKeyPair">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetKeyPair" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthToken">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetAuthToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerConnectionSpeed">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetServerConnectionSpeed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerInformation">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetServerInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInformation">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetUserInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap:operation soapAction="http://www.mi-corporation.com/AddUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllowPasswordChange">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetAllowPasswordChange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDemographicFields">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetUserDemographicFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPassword">
+      <soap:operation soapAction="http://www.mi-corporation.com/SetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPasswordRequirements">
+      <soap:operation soapAction="http://www.mi-corporation.com/SetPasswordRequirements" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUserActiveStatus">
+      <soap:operation soapAction="http://www.mi-corporation.com/SetUserActiveStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUserDemographics">
+      <soap:operation soapAction="http://www.mi-corporation.com/SetUserDemographics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUserLockStatus">
+      <soap:operation soapAction="http://www.mi-corporation.com/SetUserLockStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUsername">
+      <soap:operation soapAction="http://www.mi-corporation.com/SetUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGroups">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetAllGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsForUser">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetGroupsForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupActiveStatus">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetGroupActiveStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInGroup">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetUsersInGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupPrivileges">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetGroupPrivileges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupApps">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetGroupApps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupFormTemplates">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetGroupFormTemplates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <soap:operation soapAction="http://www.mi-corporation.com/AddGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToGroup">
+      <soap:operation soapAction="http://www.mi-corporation.com/AddUserToGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAppToGroup">
+      <soap:operation soapAction="http://www.mi-corporation.com/AddAppToGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFormTemplateToGroup">
+      <soap:operation soapAction="http://www.mi-corporation.com/AddFormTemplateToGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupDemographicFields">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetGroupDemographicFields" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserFromGroup">
+      <soap:operation soapAction="http://www.mi-corporation.com/RemoveUserFromGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAppFromGroup">
+      <soap:operation soapAction="http://www.mi-corporation.com/RemoveAppFromGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFormTemplateFromGroup">
+      <soap:operation soapAction="http://www.mi-corporation.com/RemoveFormTemplateFromGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetGroupActiveStatus">
+      <soap:operation soapAction="http://www.mi-corporation.com/SetGroupActiveStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetGroupName">
+      <soap:operation soapAction="http://www.mi-corporation.com/SetGroupName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrivileges">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetPrivileges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetGroupPrivileges">
+      <soap:operation soapAction="http://www.mi-corporation.com/SetGroupPrivileges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AuthServicesSoap12" type="tns:AuthServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetKeyPair">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetKeyPair" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuthToken">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetAuthToken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerConnectionSpeed">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetServerConnectionSpeed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerInformation">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetServerInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInformation">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetUserInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUser">
+      <soap12:operation soapAction="http://www.mi-corporation.com/AddUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllowPasswordChange">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetAllowPasswordChange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDemographicFields">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetUserDemographicFields" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPassword">
+      <soap12:operation soapAction="http://www.mi-corporation.com/SetPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetPasswordRequirements">
+      <soap12:operation soapAction="http://www.mi-corporation.com/SetPasswordRequirements" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUserActiveStatus">
+      <soap12:operation soapAction="http://www.mi-corporation.com/SetUserActiveStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUserDemographics">
+      <soap12:operation soapAction="http://www.mi-corporation.com/SetUserDemographics" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUserLockStatus">
+      <soap12:operation soapAction="http://www.mi-corporation.com/SetUserLockStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUsername">
+      <soap12:operation soapAction="http://www.mi-corporation.com/SetUsername" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGroups">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetAllGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsForUser">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetGroupsForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupActiveStatus">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetGroupActiveStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInGroup">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetUsersInGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupPrivileges">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetGroupPrivileges" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupApps">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetGroupApps" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupFormTemplates">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetGroupFormTemplates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGroup">
+      <soap12:operation soapAction="http://www.mi-corporation.com/AddGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToGroup">
+      <soap12:operation soapAction="http://www.mi-corporation.com/AddUserToGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAppToGroup">
+      <soap12:operation soapAction="http://www.mi-corporation.com/AddAppToGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFormTemplateToGroup">
+      <soap12:operation soapAction="http://www.mi-corporation.com/AddFormTemplateToGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupDemographicFields">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetGroupDemographicFields" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserFromGroup">
+      <soap12:operation soapAction="http://www.mi-corporation.com/RemoveUserFromGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAppFromGroup">
+      <soap12:operation soapAction="http://www.mi-corporation.com/RemoveAppFromGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveFormTemplateFromGroup">
+      <soap12:operation soapAction="http://www.mi-corporation.com/RemoveFormTemplateFromGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetGroupActiveStatus">
+      <soap12:operation soapAction="http://www.mi-corporation.com/SetGroupActiveStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetGroupName">
+      <soap12:operation soapAction="http://www.mi-corporation.com/SetGroupName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrivileges">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetPrivileges" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetGroupPrivileges">
+      <soap12:operation soapAction="http://www.mi-corporation.com/SetGroupPrivileges" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AuthServices">
+    <wsdl:port name="AuthServicesSoap" binding="tns:AuthServicesSoap">
+      <soap:address location="http://uat-miforms.epharmasolutions.com/MFS/Services/AuthServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AuthServicesSoap12" binding="tns:AuthServicesSoap12">
+      <soap12:address location="http://uat-miforms.epharmasolutions.com/MFS/Services/AuthServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

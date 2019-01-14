@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="ePs.MicoFormIntegration.Service.Integration" CodeBehind="Integration.svc.cs" %>

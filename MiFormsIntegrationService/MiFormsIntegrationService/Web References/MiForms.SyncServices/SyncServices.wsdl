@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.mi-corporation.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.mi-corporation.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.mi-corporation.com/">
+      <s:element name="GetApps">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeInactive" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAppsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppFileList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appVersion" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppFileListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAppFileListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppFiles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appFiles" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAppFilesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAppFilesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetAppActiveStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isActive" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetAppActiveStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetAppActiveStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadApp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appData" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="requireValidation" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadAppResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadAppResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadAppViaString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="appData" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="requireValidation" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadAppViaStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadAppViaStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormTemplates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeInactive" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormTemplatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormTemplatesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormTemplateMFT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="formId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="revision" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormTemplateMFTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormTemplateMFTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormTemplateJSON">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="formId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="revision" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormTemplateJSONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormTemplateJSONResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormTemplateJSONAndSVG">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="formId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="revision" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormTemplateJSONAndSVGResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormTemplateJSONAndSVGResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormTemplatePageBackground">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="formId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="revision" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormTemplatePageBackgroundResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormTemplatePageBackgroundResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormTemplateSVG">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="formId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="revision" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="page" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormTemplateSVGResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormTemplateSVGResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetFormTemplateActiveStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="formId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isActive" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetFormTemplateActiveStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetFormTemplateActiveStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetFormTemplateOptions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="formId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="renderThumbnails" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="renderAllInk" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="renderCleanInk" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="renderFieldValues" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="renderDPI" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="runAfterOpen" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="overridePaperlikeInterface" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="allowPODInkMerging" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetFormTemplateOptionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetFormTemplateOptionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFormTemplate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="customerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="formData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFormTemplateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadFormTemplateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAppsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetApps" />
+  </wsdl:message>
+  <wsdl:message name="GetAppsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAppsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAppFileListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAppFileList" />
+  </wsdl:message>
+  <wsdl:message name="GetAppFileListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAppFileListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAppFilesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAppFiles" />
+  </wsdl:message>
+  <wsdl:message name="GetAppFilesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAppFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetAppActiveStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:SetAppActiveStatus" />
+  </wsdl:message>
+  <wsdl:message name="SetAppActiveStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:SetAppActiveStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadAppSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadApp" />
+  </wsdl:message>
+  <wsdl:message name="UploadAppSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadAppResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadAppViaStringSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadAppViaString" />
+  </wsdl:message>
+  <wsdl:message name="UploadAppViaStringSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadAppViaStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormTemplatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormTemplates" />
+  </wsdl:message>
+  <wsdl:message name="GetFormTemplatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormTemplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormTemplateMFTSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormTemplateMFT" />
+  </wsdl:message>
+  <wsdl:message name="GetFormTemplateMFTSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormTemplateMFTResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormTemplateJSONSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormTemplateJSON" />
+  </wsdl:message>
+  <wsdl:message name="GetFormTemplateJSONSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormTemplateJSONResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormTemplateJSONAndSVGSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormTemplateJSONAndSVG" />
+  </wsdl:message>
+  <wsdl:message name="GetFormTemplateJSONAndSVGSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormTemplateJSONAndSVGResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormTemplatePageBackgroundSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormTemplatePageBackground" />
+  </wsdl:message>
+  <wsdl:message name="GetFormTemplatePageBackgroundSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormTemplatePageBackgroundResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormTemplateSVGSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormTemplateSVG" />
+  </wsdl:message>
+  <wsdl:message name="GetFormTemplateSVGSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormTemplateSVGResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetFormTemplateActiveStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:SetFormTemplateActiveStatus" />
+  </wsdl:message>
+  <wsdl:message name="SetFormTemplateActiveStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:SetFormTemplateActiveStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetFormTemplateOptionsSoapIn">
+    <wsdl:part name="parameters" element="tns:SetFormTemplateOptions" />
+  </wsdl:message>
+  <wsdl:message name="SetFormTemplateOptionsSoapOut">
+    <wsdl:part name="parameters" element="tns:SetFormTemplateOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadFormTemplateSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadFormTemplate" />
+  </wsdl:message>
+  <wsdl:message name="UploadFormTemplateSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadFormTemplateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SyncServicesSoap">
+    <wsdl:operation name="GetApps">
+      <wsdl:input message="tns:GetAppsSoapIn" />
+      <wsdl:output message="tns:GetAppsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppFileList">
+      <wsdl:input message="tns:GetAppFileListSoapIn" />
+      <wsdl:output message="tns:GetAppFileListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppFiles">
+      <wsdl:input message="tns:GetAppFilesSoapIn" />
+      <wsdl:output message="tns:GetAppFilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetAppActiveStatus">
+      <wsdl:input message="tns:SetAppActiveStatusSoapIn" />
+      <wsdl:output message="tns:SetAppActiveStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadApp">
+      <wsdl:input message="tns:UploadAppSoapIn" />
+      <wsdl:output message="tns:UploadAppSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadAppViaString">
+      <wsdl:input message="tns:UploadAppViaStringSoapIn" />
+      <wsdl:output message="tns:UploadAppViaStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormTemplates">
+      <wsdl:input message="tns:GetFormTemplatesSoapIn" />
+      <wsdl:output message="tns:GetFormTemplatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormTemplateMFT">
+      <wsdl:input message="tns:GetFormTemplateMFTSoapIn" />
+      <wsdl:output message="tns:GetFormTemplateMFTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormTemplateJSON">
+      <wsdl:input message="tns:GetFormTemplateJSONSoapIn" />
+      <wsdl:output message="tns:GetFormTemplateJSONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormTemplateJSONAndSVG">
+      <wsdl:input message="tns:GetFormTemplateJSONAndSVGSoapIn" />
+      <wsdl:output message="tns:GetFormTemplateJSONAndSVGSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormTemplatePageBackground">
+      <wsdl:input message="tns:GetFormTemplatePageBackgroundSoapIn" />
+      <wsdl:output message="tns:GetFormTemplatePageBackgroundSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormTemplateSVG">
+      <wsdl:input message="tns:GetFormTemplateSVGSoapIn" />
+      <wsdl:output message="tns:GetFormTemplateSVGSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetFormTemplateActiveStatus">
+      <wsdl:input message="tns:SetFormTemplateActiveStatusSoapIn" />
+      <wsdl:output message="tns:SetFormTemplateActiveStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetFormTemplateOptions">
+      <wsdl:input message="tns:SetFormTemplateOptionsSoapIn" />
+      <wsdl:output message="tns:SetFormTemplateOptionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFormTemplate">
+      <wsdl:input message="tns:UploadFormTemplateSoapIn" />
+      <wsdl:output message="tns:UploadFormTemplateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SyncServicesSoap" type="tns:SyncServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetApps">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetApps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppFileList">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetAppFileList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppFiles">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetAppFiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAppActiveStatus">
+      <soap:operation soapAction="http://www.mi-corporation.com/SetAppActiveStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadApp">
+      <soap:operation soapAction="http://www.mi-corporation.com/UploadApp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadAppViaString">
+      <soap:operation soapAction="http://www.mi-corporation.com/UploadAppViaString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormTemplates">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetFormTemplates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormTemplateMFT">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetFormTemplateMFT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormTemplateJSON">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetFormTemplateJSON" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormTemplateJSONAndSVG">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetFormTemplateJSONAndSVG" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormTemplatePageBackground">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetFormTemplatePageBackground" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormTemplateSVG">
+      <soap:operation soapAction="http://www.mi-corporation.com/GetFormTemplateSVG" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFormTemplateActiveStatus">
+      <soap:operation soapAction="http://www.mi-corporation.com/SetFormTemplateActiveStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFormTemplateOptions">
+      <soap:operation soapAction="http://www.mi-corporation.com/SetFormTemplateOptions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFormTemplate">
+      <soap:operation soapAction="http://www.mi-corporation.com/UploadFormTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SyncServicesSoap12" type="tns:SyncServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetApps">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetApps" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppFileList">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetAppFileList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppFiles">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetAppFiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetAppActiveStatus">
+      <soap12:operation soapAction="http://www.mi-corporation.com/SetAppActiveStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadApp">
+      <soap12:operation soapAction="http://www.mi-corporation.com/UploadApp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadAppViaString">
+      <soap12:operation soapAction="http://www.mi-corporation.com/UploadAppViaString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormTemplates">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetFormTemplates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormTemplateMFT">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetFormTemplateMFT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormTemplateJSON">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetFormTemplateJSON" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormTemplateJSONAndSVG">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetFormTemplateJSONAndSVG" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormTemplatePageBackground">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetFormTemplatePageBackground" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormTemplateSVG">
+      <soap12:operation soapAction="http://www.mi-corporation.com/GetFormTemplateSVG" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFormTemplateActiveStatus">
+      <soap12:operation soapAction="http://www.mi-corporation.com/SetFormTemplateActiveStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFormTemplateOptions">
+      <soap12:operation soapAction="http://www.mi-corporation.com/SetFormTemplateOptions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFormTemplate">
+      <soap12:operation soapAction="http://www.mi-corporation.com/UploadFormTemplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SyncServices">
+    <wsdl:port name="SyncServicesSoap" binding="tns:SyncServicesSoap">
+      <soap:address location="http://uat-miforms.epharmasolutions.com/mfs/services/SyncServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SyncServicesSoap12" binding="tns:SyncServicesSoap12">
+      <soap12:address location="http://uat-miforms.epharmasolutions.com/mfs/services/SyncServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

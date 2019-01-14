@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "eICF", "eICF\eICF.vbproj", "{17359F19-A723-423B-AD76-EE831417EA72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eICFTests", "eICFTests\eICFTests.csproj", "{F3691196-CECB-4F90-8726-D3AF0EAEAEE2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{17359F19-A723-423B-AD76-EE831417EA72} = {17359F19-A723-423B-AD76-EE831417EA72}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{17359F19-A723-423B-AD76-EE831417EA72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17359F19-A723-423B-AD76-EE831417EA72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17359F19-A723-423B-AD76-EE831417EA72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17359F19-A723-423B-AD76-EE831417EA72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3691196-CECB-4F90-8726-D3AF0EAEAEE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3691196-CECB-4F90-8726-D3AF0EAEAEE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3691196-CECB-4F90-8726-D3AF0EAEAEE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3691196-CECB-4F90-8726-D3AF0EAEAEE2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://prodapp05:8080/tfs/eps
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = eICF\\eICF.vbproj
+		SccProjectName1 = eICF
+		SccLocalPath1 = eICF
+		SccProjectUniqueName2 = eICFTests\\eICFTests.csproj
+		SccProjectName2 = eICFTests
+		SccLocalPath2 = eICFTests
+	EndGlobalSection
+EndGlobal

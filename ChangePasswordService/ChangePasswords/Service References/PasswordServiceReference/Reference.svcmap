@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9445b941-5c65-47c1-8615-3f6a9c8849e0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://uat-miforms.epharmasolutions.com/MiFormsIntegrationService/Integration.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Integration3.xsd" MetadataType="Schema" ID="740f27ac-a75a-44cb-a709-392b11612b18" SourceId="1" SourceUrl="http://uat-miforms.epharmasolutions.com/MiFormsIntegrationService/Integration.svc?xsd=xsd2" />
+    <MetadataFile FileName="Integration1.wsdl" MetadataType="Wsdl" ID="42b8113c-a194-427e-a3f6-cf05d52230be" SourceId="1" SourceUrl="http://uat-miforms.epharmasolutions.com/MiFormsIntegrationService/Integration.svc?wsdl" />
+    <MetadataFile FileName="Integration31.xsd" MetadataType="Schema" ID="fc2aab78-bbf7-486f-a1dc-d51877fbfcf8" SourceId="1" SourceUrl="http://uat-miforms.epharmasolutions.com/MiFormsIntegrationService/Integration.svc?xsd=xsd1" />
+    <MetadataFile FileName="Integration1.disco" MetadataType="Disco" ID="92ff7f07-cf35-46e7-9033-d1fe0bf77a1c" SourceId="1" SourceUrl="http://uat-miforms.epharmasolutions.com/MiFormsIntegrationService/Integration.svc?disco" />
+    <MetadataFile FileName="Integration32.xsd" MetadataType="Schema" ID="45742e3a-9c12-41d6-92d9-d3f72e3b770d" SourceId="1" SourceUrl="http://uat-miforms.epharmasolutions.com/MiFormsIntegrationService/Integration.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
